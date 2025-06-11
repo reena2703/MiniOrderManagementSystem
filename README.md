@@ -51,6 +51,10 @@ Product product;           // Embedded product snapshot (price at time of order)
 int quantity;
 double subtotal;           // Auto-calculated
 ```
+## System Architecture
+### High-Level Component Architecture
+
+![Screenshot (18)](https://github.com/user-attachments/assets/5f35f69a-069d-45a3-875b-28dabc97efed)
 
 ## 🔧 Functional Requirements Implemented
 
@@ -69,16 +73,26 @@ double subtotal;           // Auto-calculated
     *   List of Order Items (inside Order)
 *   Store data in MongoDB collections: `customers`, `products`, `orders`.
 
-## 🚀 Bonus Features (Optional - Mention if you implemented any)
+## Core Application Flow
+### Request Processing and Data Flow
 
-*   **Indexes:** Implemented `@Indexed(unique = true)` on `Customer.email`.
-*   *(Add any other bonus features you implemented, e.g., pagination, invoice generation, unit tests)*
+![Screenshot (19)](https://github.com/user-attachments/assets/835f260f-2ac9-4cce-8463-07e46432ab71)
 
-## 📦 Deliverables
 
-*   ✅ Spring Boot Project (This repository)
-*   ✅ README file (This file)
-*   ✅ (Optional) 2–5 minute video walkthrough (Link to video, once uploaded)
+## REST API Structure
+### The system provides comprehensive REST APIs following standard HTTP conventions:
+```java
+Entity	Base Path	Operations	Special Features
+Customer	/api/customers	GET, POST, PUT, DELETE	Email uniqueness validation
+Product	/api/products	GET, POST, PUT, DELETE	Category-based organization
+Order	/api/orders	GET, POST, DELETE	Advanced filtering and search
+```
+## Key API Capabilities:
+
+#### Order Filtering: Query by minimum total amount and date ranges
+#### Customer Search: Find orders by customer email or phone number
+#### Data Integrity: Automatic cascade deletion of orders when customers are removed
+#### Embedded Data: Orders maintain historical snapshots of customer and product data
 
 ## 🛠️ Technologies Used
 
@@ -86,8 +100,13 @@ double subtotal;           // Auto-calculated
 *   **Spring Boot 3.x**
 *   **Spring Data MongoDB**
 *   **MongoDB**
+  
+## Domain Model Relationships
+### Entity Relationship Structure
 
 ## ⚙️ How to Run the Project
+
+![Screenshot (20)](https://github.com/user-attachments/assets/7ea32d48-d8bb-4eea-a922-4b3e01481ba3)
 
 1.  **Prerequisites:**
     *   Java Development Kit (JDK) 17 or higher
