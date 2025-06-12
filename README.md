@@ -244,27 +244,18 @@ Order	/api/orders	GET, POST, DELETE	Advanced filtering and search
 *   **Filter Orders by Date Range (GET /api/orders?fromDate=2024-01-01&toDate=2024-12-31)**
 
 ## 📚 Project Structure Explanation
-
+```
 ├── src/main/java/com/example/MiniOrderManagement/
-
 │ ├── controller/ # REST API endpoints
-
 │ ├── model/ # Data models (Customer, Product, Order, OrderItem)
-
 │ ├── repository/ # Spring Data MongoDB interfaces for data access
-
 │ ├── service/ # Business logic and coordination
-
 │ └── MiniOrderManagementApplication.java # Main Spring Boot application entry point
-
 ├── src/main/resources/
-
 │ └── application.properties # Application configuration (e.g., MongoDB URI)
-
 ├── pom.xml # Maven project configuration and dependencies
-
 └── README.md # Project documentation (this file)
-
+```
  ✅ Assumptions
 
 *   MongoDB is running on `localhost:27017`.
